@@ -3,438 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notícias do Dia — Crédito Pessoal</title>
+<title>Portal do Crédito — Como funciona a solicitação de crédito pessoal online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --dark: #0B3D2E;
-    --dark-2: #0F4D3A;
-    --green: #22C55E;
-    --green-bright: #3FE07A;
-    --green-dark: #16A34A;
-    --green-pale: #E7F8ED;
-    --gold: #F5B942;
-    --ink: #16212B;
-    --ink-soft: #4A5560;
-    --cream: #F7F5EF;
-    --border: #E4E7EB;
-    --white: #FFFFFF;
+    --bg:#FFFFFF;
+    --text:#1F2937;
+    --text-soft:#5B6472;
+    --blue:#0F3D91;
+    --green:#16A34A;
+    --green-dark:#128A3E;
+    --border:#E7E9EC;
+    --placeholder-bg:#F6F8FB;
+    --placeholder-border:#C9D3E0;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     font-family:'Inter', sans-serif;
-    color:var(--ink);
-    background:var(--white);
-    line-height:1.6;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:1.02rem;
   }
-  h1,h2,h3{ font-family:'Poppins', sans-serif; }
   a{ color:inherit; text-decoration:none; }
   img{ max-width:100%; display:block; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 28px; }
 
   /* HEADER */
-  header.site{
-    background:var(--dark);
-    padding:18px 32px;
-  }
-  .header-inner{
-    max-width:1180px; margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:12px;
-  }
-  .logo{ font-family:'Poppins', sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:.5px; color:var(--white); }
-  .logo span{ color:var(--green-bright); }
-  nav.main-nav{ display:flex; align-items:center; gap:28px; font-size:.88rem; font-weight:600; color:rgba(255,255,255,.85); }
-  nav.main-nav .sep{ color:rgba(255,255,255,.25); }
-  .search-icon{ width:18px; height:18px; opacity:.8; color:var(--white); }
+  header.site{ border-bottom:1px solid var(--border); padding:18px 0; }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  .logo{ font-weight:800; font-size:1.15rem; color:var(--blue); letter-spacing:.2px; }
+  nav.main-nav{ display:flex; gap:26px; font-size:.88rem; font-weight:600; color:var(--text); }
+  .search-icon{ width:17px; height:17px; opacity:.65; }
 
-  /* DISCLAIMER TOP */
-  .top-disclaimer{
-    text-align:center; font-size:.8rem; color:var(--ink-soft);
-    padding:12px 20px; max-width:900px; margin:0 auto;
+  /* SPONSORED BANNER */
+  .sponsor-banner{
+    background:var(--placeholder-bg); border-bottom:1px solid var(--border);
+    text-align:center; font-size:.82rem; color:var(--text-soft); padding:10px 20px;
   }
+  .sponsor-banner strong{ color:var(--text); font-weight:700; }
 
-  /* HERO BANNER (dark) */
-  .hero-banner{
-    background:linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
-    padding:44px 24px 0;
-  }
-  .hero-banner-inner{ max-width:1180px; margin:0 auto; text-align:center; }
-  .eyebrow-pill{
-    display:inline-flex; align-items:center; gap:6px;
-    background:rgba(63,224,122,.15); color:var(--green-bright);
-    font-weight:700; font-size:.78rem; letter-spacing:.6px;
-    padding:7px 16px; border-radius:999px; margin-bottom:18px;
-  }
-  h1.headline{
-    font-size:2.4rem; font-weight:700; line-height:1.2;
-    max-width:820px; margin:0 auto 16px; color:var(--white);
-  }
-  .dek{ font-size:1.05rem; color:rgba(255,255,255,.75); max-width:620px; margin:0 auto 22px; }
-  .byline{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:26px; }
-  .byline .avatar{
-    width:42px; height:42px; border-radius:50%;
-    background:linear-gradient(135deg,#f2c9c0,#e8a898);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:700; color:#8a4a3a; font-size:.95rem;
-  }
-  .byline .meta{ font-size:.84rem; color:rgba(255,255,255,.65); text-align:left; }
-  .byline .meta strong{ display:block; color:var(--white); font-size:.9rem; font-weight:700; }
-
-  .trust-row{
-    display:flex; align-items:center; justify-content:center; gap:22px;
-    flex-wrap:wrap; padding:20px 0 34px; color:rgba(255,255,255,.8); font-size:.85rem;
-  }
-  .trust-row .item{ display:flex; align-items:center; gap:8px; }
-  .trust-row svg{ width:18px; height:18px; color:var(--green-bright); }
-  .stars{ color:var(--gold); letter-spacing:1px; }
-
-  .hero-img-wrap{ max-width:1180px; margin:0 auto; padding:0 24px 50px; }
+  /* HERO */
   .hero{
-    border-radius:16px; overflow:hidden;
-    box-shadow:0 16px 40px rgba(0,0,0,.28);
-    transform:translateY(28px);
-    display:grid; grid-template-columns:1.7fr 1fr;
+    display:grid; grid-template-columns:1.5fr 1fr; gap:44px;
+    padding:56px 0 20px; align-items:center;
   }
-  .hero-img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .hero-side{
-    background:var(--dark); color:var(--white);
-    padding:34px 30px; display:flex; flex-direction:column; justify-content:center;
-  }
-  .hero-side h3{ font-size:1.3rem; font-weight:700; line-height:1.35; margin-bottom:4px; }
-  .hero-side h3 .accent{ color:var(--green-bright); display:block; }
-  .hero-list{ list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:14px; }
-  .hero-list li{ display:flex; align-items:flex-start; gap:10px; font-size:.92rem; }
-  .check{
-    flex:0 0 auto; width:20px; height:20px; border-radius:50%;
-    background:var(--green); display:flex; align-items:center; justify-content:center;
-    margin-top:1px;
-  }
-  .check svg{ width:11px; height:11px; }
+  .hero img{ border-radius:10px; width:100%; height:100%; object-fit:cover; }
+  h1.headline{ font-size:1.9rem; font-weight:800; line-height:1.32; color:var(--text); margin-bottom:16px; }
+  .hero .subtitle{ font-size:1.02rem; color:var(--text-soft); margin-bottom:22px; }
+  .hero .byline{ font-size:.85rem; color:var(--text-soft); border-top:1px solid var(--border); padding-top:16px; }
+  .hero .byline strong{ color:var(--text); }
 
   /* ARTICLE BODY */
-  .article-wrap{ max-width:1180px; margin:0 auto; padding:60px 24px 60px; }
-  .body-copy{ max-width:760px; margin:0 auto; }
-  .body-copy p{ margin-bottom:18px; color:var(--ink); font-size:1rem; }
-  .body-copy p.strong-line{ font-weight:700; }
-  h2.section-title{ font-size:1.55rem; font-weight:700; margin:36px 0 14px; color:var(--dark); }
+  main{ padding:20px 0 10px; }
+  .article-body{ max-width:820px; margin:0 auto; }
+  h2.section-title{ font-size:1.5rem; font-weight:800; margin:52px 0 20px; color:var(--text); }
+  .article-body p{ margin-bottom:20px; color:var(--text); }
 
-  /* FEATURE CARDS */
-  .feature-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
-    margin:22px 0 44px;
+  /* PLACEHOLDER TEXT BLOCK */
+  .placeholder-block{
+    background:var(--placeholder-bg); border:1.5px dashed var(--placeholder-border);
+    border-radius:10px; padding:20px 22px; margin-bottom:20px;
+    font-size:.92rem; color:var(--text-soft);
   }
-  .feature-card{
-    border:1px solid var(--border); border-radius:14px; padding:22px 18px;
-    background:var(--cream);
+  .placeholder-block .tag{
+    display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.5px;
+    color:var(--blue); background:#E8EEFA; padding:3px 10px; border-radius:6px; margin-bottom:10px;
   }
-  .feature-icon{
-    width:42px; height:42px; border-radius:999px; background:var(--green-pale);
-    display:flex; align-items:center; justify-content:center; margin-bottom:14px;
-  }
-  .feature-icon svg{ width:20px; height:20px; color:var(--green-dark); }
-  .feature-card h4{ font-size:.98rem; font-weight:700; margin-bottom:8px; line-height:1.3; }
-  .feature-card p{ font-size:.87rem; color:var(--ink-soft); }
 
-  /* WHO CAN APPLY */
-  .who-row{
-    display:flex; align-items:center; gap:0; margin:26px 0 34px;
-    border:1px solid var(--border); border-radius:14px; overflow:hidden;
-    background:var(--cream);
+  /* FULL WIDTH IMAGE */
+  .full-img{ margin:36px 0; }
+  .full-img img{ width:100%; border-radius:10px; }
+  .full-img.placeholder-img{
+    background:var(--placeholder-bg); border:1.5px dashed var(--placeholder-border);
+    border-radius:10px; min-height:280px; display:flex; align-items:center; justify-content:center;
+    color:var(--text-soft); font-size:.9rem; text-align:center; padding:20px;
   }
-  .who-item{ flex:1; display:flex; align-items:center; gap:14px; padding:20px 24px; }
-  .who-item .icon{ width:34px; height:34px; color:var(--green-dark); flex:0 0 auto; }
-  .who-item span{ font-size:.92rem; color:var(--ink); font-weight:500; }
-  .who-divider{ width:1px; align-self:stretch; background:var(--border); }
 
-  /* CALLOUT */
-  .callout{
-    background:var(--green-pale); border:1px solid #cdeedb; border-radius:14px;
-    padding:22px 24px; margin-bottom:36px; display:flex; gap:14px;
-  }
-  .callout .badge{
-    flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--green-dark);
-    color:var(--white); display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:.95rem;
-  }
-  .callout h4{ font-size:1rem; font-weight:700; margin-bottom:6px; }
-  .callout p{ font-size:.92rem; color:var(--ink-soft); margin:0; }
-
-  /* CTA */
-  .cta-block{ text-align:center; margin:38px 0 30px; }
+  /* CTA BUTTON */
+  .cta-block{ text-align:center; margin:44px 0; }
   .cta-btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    background:linear-gradient(135deg, var(--green-bright), var(--green-dark));
-    color:var(--white); font-weight:700; font-size:1.05rem;
-    padding:18px 30px; border-radius:999px; width:100%; max-width:700px;
-    box-shadow:0 10px 26px rgba(34,197,94,.35);
-    transition:transform .15s ease, box-shadow .15s ease;
+    display:inline-block; background:var(--green); color:#fff; font-weight:700;
+    font-size:1rem; padding:16px 34px; border-radius:8px;
+    transition:background .15s ease;
   }
-  .cta-btn:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(34,197,94,.42); }
-  .cta-btn svg{ width:20px; height:20px; }
-  .cta-sub{
-    margin-top:14px; font-size:.85rem; color:var(--ink-soft);
-    display:flex; align-items:center; justify-content:center; gap:8px;
-  }
-  .cta-sub svg{ width:16px; height:16px; color:var(--green-dark); }
+  .cta-btn:hover{ background:var(--green-dark); }
+  .cta-sub{ margin-top:12px; font-size:.85rem; color:var(--text-soft); }
 
-  /* FAQ ACCORDION */
-  .faq{ margin-top:8px; }
-  .faq-item{
-    border:1px solid var(--border); border-radius:12px; margin-bottom:12px;
-    overflow:hidden; background:var(--white);
-  }
+  /* FAQ */
+  .faq-item{ border-bottom:1px solid var(--border); padding:18px 0; }
   .faq-item summary{
-    list-style:none; cursor:pointer; padding:18px 20px;
-    font-weight:700; font-size:.96rem; display:flex; align-items:center;
-    justify-content:space-between; gap:12px; color:var(--dark);
+    list-style:none; cursor:pointer; font-weight:700; font-size:1rem; color:var(--text);
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
   }
   .faq-item summary::-webkit-details-marker{ display:none; }
-  .faq-item summary .chevron{
-    width:20px; height:20px; flex:0 0 auto; color:var(--green-dark);
-    transition:transform .2s ease;
-  }
-  .faq-item[open] summary .chevron{ transform:rotate(180deg); }
-  .faq-item .faq-body{
-    padding:0 20px 18px; font-size:.92rem; color:var(--ink-soft);
-  }
-
-  /* STICKY CTA */
-  .sticky-cta{
-    position:fixed; left:0; right:0; bottom:0; z-index:50;
-    background:var(--dark); padding:12px 18px;
-    display:flex; align-items:center; justify-content:center; gap:16px;
-    box-shadow:0 -6px 20px rgba(0,0,0,.25);
-    transform:translateY(120%); transition:transform .3s ease;
-  }
-  .sticky-cta.show{ transform:translateY(0); }
-  .sticky-cta span{ color:var(--white); font-size:.88rem; font-weight:600; display:none; }
-  .sticky-cta a{
-    background:linear-gradient(135deg, var(--green-bright), var(--green-dark));
-    color:var(--white); font-weight:700; font-size:.92rem;
-    padding:13px 24px; border-radius:999px; white-space:nowrap;
-  }
+  .faq-item summary::after{ content:"+"; font-size:1.3rem; color:var(--blue); font-weight:400; }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item .faq-answer{ margin-top:12px; font-size:.95rem; color:var(--text-soft); }
 
   /* FOOTER */
-  footer.site{
-    background:var(--dark); margin-top:20px; padding:30px 24px 90px;
-    text-align:center;
-  }
-  footer.site p{
-    max-width:820px; margin:0 auto 14px; font-size:.8rem; color:rgba(255,255,255,.55);
-  }
-  footer.site .links{ font-size:.85rem; font-weight:600; }
-  footer.site .links a{ color:rgba(255,255,255,.85); }
-  footer.site .links .sep{ color:rgba(255,255,255,.25); margin:0 8px; }
+  footer.site{ border-top:1px solid var(--border); margin-top:60px; padding:50px 0 40px; background:var(--placeholder-bg); }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:36px; }
+  footer.site h4{ font-size:.85rem; font-weight:800; color:var(--text); margin-bottom:12px; letter-spacing:.3px; }
+  footer.site p{ font-size:.85rem; color:var(--text-soft); margin-bottom:12px; }
+  footer.site ul{ list-style:none; }
+  footer.site ul li{ margin-bottom:8px; font-size:.85rem; }
+  footer.site ul a{ color:var(--text-soft); }
+  footer.site ul a:hover{ color:var(--blue); }
+  .footer-bottom{ border-top:1px solid var(--border); padding-top:20px; font-size:.78rem; color:var(--text-soft); text-align:center; }
 
-  @media (max-width:860px){
+  @media (max-width:820px){
     .hero{ grid-template-columns:1fr; }
-    .feature-grid{ grid-template-columns:repeat(2,1fr); }
-    .who-row{ flex-direction:column; }
-    .who-divider{ width:100%; height:1px; }
-    h1.headline{ font-size:1.7rem; }
+    .footer-grid{ grid-template-columns:1fr; }
     nav.main-nav{ display:none; }
-    .trust-row{ gap:14px; font-size:.78rem; }
-    .sticky-cta span{ display:none; }
+    h1.headline{ font-size:1.5rem; }
   }
 </style>
 </head>
 <body>
 
 <header class="site">
-  <div class="header-inner">
-    <div class="logo">NOTÍCIAS <span>DO DIA</span></div>
+  <div class="wrap header-inner">
+    <div class="logo">Portal do Crédito</div>
     <nav class="main-nav">
-      <a href="#">ÚLTIMAS NOTÍCIAS</a><span class="sep">|</span>
-      <a href="#">ECONOMIA</a><span class="sep">|</span>
-      <a href="#">FINANÇAS</a><span class="sep">|</span>
-      <a href="#">TECNOLOGIA</a>
+      <a href="#">Economia</a>
+      <a href="#">Crédito</a>
+      <a href="#">Finanças</a>
+      <a href="#">Educação Financeira</a>
     </nav>
     <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
   </div>
 </header>
 
-<p class="top-disclaimer">Este conteúdo é informativo. As condições podem variar de acordo com a análise de crédito de cada instituição financeira.</p>
+<div class="sponsor-banner">
+  <strong>Conteúdo patrocinado</strong> • Informações sobre crédito pessoal. A aprovação depende da análise da instituição financeira.
+</div>
 
-<section class="hero-banner">
-  <div class="hero-banner-inner">
-    <div class="eyebrow-pill">💳 CRÉDITO PESSOAL</div>
-    <h1 class="headline">Brasileiros estão descobrindo novas formas de acessar crédito online em poucos minutos</h1>
-    <p class="dek">Entenda como funciona o processo e veja como a digitalização de instituições tradicionais facilita o acesso para quem precisa de dinheiro rápido.</p>
-
-    <div class="byline">
-      <div class="avatar">JC</div>
-      <div class="meta">
-        <strong>Por Juliana Castro</strong>
-        Atualizado há 5 minutos &nbsp;•&nbsp; 4 min de leitura
-      </div>
-    </div>
-
-    <div class="trust-row">
-      <div class="item"><span class="stars">★★★★★</span>&nbsp; avaliado por leitores</div>
-      <div class="item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
-        Conexão segura
-      </div>
-      <div class="item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
-        Resposta em minutos
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="hero-img-wrap">
+<div class="wrap">
   <section class="hero">
-    <img src="assets/hero-credito.jpg" alt="Mulher sorrindo trabalhando com laptop e papéis na mesa" class="hero-img">
-    <div class="hero-side">
-      <h3>Crédito pessoal online e rápido:<span class="accent">veja como funciona</span></h3>
-      <ul class="hero-list">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Solicitação 100% online</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Análise em poucos minutos</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Dinheiro na conta após aprovação</li>
-      </ul>
+    <img src="assets/hero-credito.jpg" alt="Mulher sorridente organizando contas e utilizando notebook em casa">
+    <div>
+      <h1 class="headline">Como funciona a solicitação de crédito pessoal online e o que considerar antes de fazer um pedido</h1>
+      <p class="subtitle">Cada vez mais brasileiros utilizam canais digitais para consultar opções de crédito. Entenda como funciona o processo, quais fatores costumam ser analisados e como verificar as possibilidades disponíveis para o seu perfil.</p>
+      <div class="byline"><strong>Equipe Portal do Crédito</strong> • Atualizado hoje • 6 minutos de leitura</div>
     </div>
   </section>
-</div>
 
-<main class="article-wrap">
-  <div class="body-copy">
-    <p>Nos últimos meses, cresceu no Brasil a busca por alternativas de crédito pessoal feitas totalmente pela internet. Segundo dados do mercado financeiro, cada vez mais pessoas estão optando por soluções digitais por conta da praticidade e rapidez na análise de perfil.</p>
+  <main>
+    <div class="article-body">
 
-    <p>Com a modernização do sistema bancário, grandes instituições financeiras tradicionais passaram a integrar tecnologia de ponta para facilitar a vida do cidadão comum. Hoje, já é possível simular propostas e buscar aprovação sem enfrentar filas ou burocracias desnecessárias.</p>
-
-    <p class="strong-line">Mas afinal, como isso funciona na prática?</p>
-
-    <h2 class="section-title">O que está acontecendo no mercado</h2>
-    <p>Hoje, diversas instituições financeiras e plataformas digitais integradas a correspondentes bancários passam a oferecer um ecossistema simplificado:</p>
-
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="12" height="18" rx="2"/><line x1="8" y1="8" x2="12" y2="8"/><line x1="8" y1="12" x2="12" y2="12"/><circle cx="18" cy="17" r="3"/></svg></div>
-        <h4>Solicitação 100% online</h4>
-        <p>Todo o processo é feito pela internet, de forma simples e segura, direto do celular.</p>
+      <div class="article-body-text">
+        <p>O cenário do crédito pessoal no Brasil passou por uma notável transformação. A digitalização das operações financeiras simplificou o acesso e democratizou a informação, permitindo decisões mais conscientes. Instituições financeiras, como o Bradesco, têm adaptado suas ofertas para essa nova realidade.</p>
+        <p>A tecnologia é o motor dessa mudança. Plataformas online e aplicativos bancários permitem simular empréstimos, comparar taxas e obter aprovação de forma ágil. Essa conveniência de resolver questões financeiras sem sair de casa, a qualquer hora, tornou-se um diferencial essencial para milhões de brasileiros.</p>
+        <p>A busca por crédito na internet é impulsionada pela praticidade e pela vasta gama de opções. A transparência nas informações e a agilidade na resposta contribuem para essa popularidade. Seja para imprevistos, projetos pessoais ou organização financeira, o ambiente digital oferece um caminho eficaz.</p>
+        <p>O processo de solicitação de crédito pessoal online, embora simplificado, segue etapas claras. Geralmente, envolve o preenchimento de um formulário digital com dados pessoais e financeiros. A instituição realiza uma análise de crédito, avaliando fatores como histórico de pagamentos, score e renda, para garantir uma concessão responsável.</p>
+        <p>É fundamental estar atento aos detalhes. A leitura cuidadosa do contrato, a compreensão das taxas de juros, do Custo Efetivo Total (CET) e do prazo de pagamento são passos indispensáveis. A facilidade de acesso ao crédito online não dispensa a importância de uma decisão financeira bem informada e planejada. O crédito pessoal, quando usado com sabedoria, pode ser um grande aliado para seus objetivos.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
-        <h4>Análise de perfil automatizada</h4>
-        <p>A resposta com as opções disponíveis pode sair em poucos minutos, sem burocracia excessiva.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/></svg></div>
-        <h4>Depósito direto na conta</h4>
-        <p>Após a aprovação final do contrato, o dinheiro pode cair na sua conta rapidamente.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-        <h4>Mais segurança e praticidade</h4>
-        <p>Seus dados são protegidos por criptografia e o acompanhamento é feito em tempo real.</p>
-      </div>
-    </div>
 
-    <h2 class="section-title">Quem pode solicitar</h2>
-    <p>As condições de taxas e prazos podem variar de acordo com o perfil do solicitante e as regras do banco, mas geralmente as análises levam em conta alguns pontos importantes:</p>
-
-    <div class="who-row">
-      <div class="who-item">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15a8 8 0 0 1 16 0"/><line x1="12" y1="15" x2="15" y2="10"/><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"/></svg>
-        <span>Score de crédito nos órgãos de proteção</span>
+      <div class="full-img">
+        <img src="assets/img-notebook-conta.jpg" alt="Homem organizando contas e utilizando notebook no sofá de casa">
       </div>
-      <div class="who-divider"></div>
-      <div class="who-item">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="13" x2="18" y2="13"/></svg>
-        <span>Dados cadastrais básicos atualizados</span>
+
+      <h2 class="section-title">Como funciona a análise de crédito</h2>
+      <div class="article-body-text">
+        <p>Ao solicitar crédito pessoal, a avaliação da sua capacidade de pagamento é um passo crucial para as instituições financeiras. Este processo, que visa mitigar riscos e garantir a concessão responsável, envolve diversas etapas que o consumidor deve conhecer para se preparar adequadamente.</p>
+        <p>O processo inicia-se com o Cadastro, onde o solicitante fornece informações pessoais e financeiras detalhadas. A precisão desses dados é fundamental para a agilidade da análise. Em seguida, a Documentação é solicitada, geralmente incluindo comprovantes de identificação, residência e renda, que são essenciais para a verificação das informações.</p>
+        <p>Com os dados em mãos, a instituição procede à Análise do perfil. Isso envolve a consulta a bancos de dados de crédito, como Serasa e SPC, para verificar o histórico de pagamentos e o score de crédito do solicitante. O Perfil financeiro é avaliado em sua totalidade, considerando fatores como renda, estabilidade profissional e relacionamento bancário, como o que se pode ter com um banco como o Bradesco, por exemplo.</p>
+        <p>Com base nessa avaliação, são definidas as Condições do crédito, que incluem o valor, as taxas de juros e o prazo de pagamento. Essas condições são personalizadas para cada perfil, refletindo o risco percebido. O Tempo de Resposta pode variar, mas a agilidade é uma constante no mercado atual, buscando conciliar rapidez com segurança.</p>
+        <p>É importante que todo o processo seja transparente, com linguagem clara para o consumidor. A análise de crédito não deve ser vista como um obstáculo, mas como uma ferramenta que assegura a concessão responsável, protegendo tanto o tomador quanto a instituição financeira. Compreender essas etapas permite uma abordagem mais estratégica na busca por crédito pessoal.</p>
       </div>
-    </div>
 
-    <div class="callout">
-      <div class="badge">!</div>
-      <div>
-        <h4>Importante entender:</h4>
-        <p>Nem todas as pessoas são aprovadas automaticamente. O sistema financeiro avalia o perfil de cada solicitante antes de liberar qualquer tipo de crédito, garantindo mais segurança para ambas as partes. A vantagem de utilizar canais digitais parceiros é a velocidade em encontrar qual linha de crédito se encaixa melhor no seu bolso hoje.</p>
+      <div class="cta-block">
+        <a href="#" class="cta-btn">Verificar opções disponíveis</a>
+        <p class="cta-sub">Consulta simples • Processo online • Sujeito à análise</p>
       </div>
-    </div>
 
-    <h2 class="section-title">Como ver as opções disponíveis para você</h2>
-    <p>Atualmente, existem plataformas integradas que permitem consultar ofertas de crédito disponíveis para o seu perfil de forma simples e rápida.</p>
-    <p>Basta preencher algumas informações básicas para visualizar as possibilidades reais e simular valores sem compromisso.</p>
+      <h2 class="section-title">Em quais situações o crédito pessoal costuma ser utilizado?</h2>
+      <div class="article-body-text">
+        <p>O crédito pessoal, por sua flexibilidade, serve a uma ampla gama de necessidades. Longe de ser apenas uma solução para emergências, ele pode ser um aliado estratégico no planejamento financeiro e na realização de objetivos. Compreender suas diversas aplicações é fundamental para um uso consciente.</p>
+        <p><strong>Reforma da casa:</strong> Para transformar seu lar, o crédito pessoal pode fornecer o capital necessário, oferecendo liberdade no uso do dinheiro.</p>
+        <p><strong>Organização financeira:</strong> Muitos utilizam o crédito para consolidar dívidas, unificando débitos com juros mais altos em um único empréstimo com condições mais favoráveis, simplificando o orçamento.</p>
+        <p><strong>Despesas inesperadas:</strong> Imprevistos como problemas de saúde ou reparos urgentes podem ser cobertos rapidamente, sem comprometer as economias.</p>
+        <p><strong>Investimento no pequeno negócio:</strong> Empreendedores podem usar o crédito para comprar equipamentos, expandir estoque ou investir em marketing, impulsionando o crescimento da empresa.</p>
+        <p><strong>Planejamento financeiro:</strong> Para custear um curso de especialização, uma viagem ou a compra de um bem durável, o crédito funciona como um adiantamento de recursos.</p>
+        <p><strong>Educação:</strong> Investir em conhecimento, cobrindo mensalidades ou materiais didáticos, pode ser viabilizado pelo crédito pessoal.</p>
+        <p><strong>Emergências familiares:</strong> Despesas médicas não cobertas ou apoio a familiares em dificuldade podem ser supridas com agilidade.</p>
+        <p><strong>Qualidade de vida:</strong> Financiar a compra de eletrodomésticos, móveis ou procedimentos estéticos contribui para o bem-estar.</p>
+        <p><strong>Viagens e lazer:</strong> Um crédito pessoal pode viabilizar uma viagem dos sonhos, desde que as parcelas caibam no orçamento.</p>
+        <p><strong>Quitação de dívidas de alto custo:</strong> Substituir dívidas com juros exorbitantes por um empréstimo com taxas mais baixas é uma estratégia inteligente para reorganizar as finanças.</p>
+        <p>Em todas essas situações, a chave é a análise cuidadosa da necessidade e a certeza de que as parcelas caberão no orçamento. Instituições como o Bradesco oferecem opções que, usadas com sabedoria, podem ser um grande aliado para sua saúde financeira.</p>
+      </div>
 
-    <div class="cta-block" id="cta-principal">
-      <a href="#" class="cta-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        VER OPÇÕES DE CRÉDITO DISPONÍVEIS AGORA
-      </a>
-      <p class="cta-sub">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
-        É rápido, seguro e não compromete seu score.
-      </p>
-    </div>
+      <div class="full-img">
+        <img src="assets/img-celular.jpg" alt="Mulher sorrindo enquanto utiliza o celular na cozinha">
+      </div>
 
-    <h2 class="section-title">Perguntas frequentes</h2>
-    <div class="faq">
+      <h2 class="section-title">O que observar antes de solicitar crédito</h2>
+      <div class="article-body-text">
+        <p>A facilidade de acesso ao crédito pessoal online não deve dispensar uma análise criteriosa. Tomar uma decisão informada é crucial para que o empréstimo seja um recurso positivo. Antes de contratar, alguns fatores merecem atenção redobrada para proteger sua saúde financeira.</p>
+        <p>As Taxas de Juros são o custo do dinheiro emprestado e variam entre as instituições. É fundamental pesquisar e comparar as taxas oferecidas, pois uma pequena diferença pode impactar o valor total. Em conjunto, as Parcelas Mensais devem caber confortavelmente no seu orçamento, sem comprometer despesas essenciais.</p>
+        <p>O Custo Efetivo Total (CET) é um indicador essencial, pois engloba não apenas a taxa de juros, mas todos os encargos, tarifas e impostos. Ele representa o custo real do empréstimo e é a melhor métrica para comparar diferentes ofertas. Sempre solicite o CET para ter uma visão completa.</p>
+        <p>A Capacidade de Pagamento é um autoexame financeiro indispensável. Analise sua renda e despesas para identificar quanto você pode destinar às parcelas sem desequilibrar suas finanças. Um bom planejamento evita o superendividamento.</p>
+        <p>A Comparação de Opções é sua melhor ferramenta. Não se limite à primeira oferta. Utilize plataformas que permitem simular e comparar propostas de diversas instituições, incluindo grandes bancos. Avalie taxas, CET, reputação e clareza do contrato. Uma escolha bem informada pode economizar dinheiro e evitar problemas.</p>
+        <p>É crucial evitar a Contratação Impulsiva. O crédito pessoal deve ser uma decisão ponderada, baseada em necessidades reais e planejamento financeiro sólido. Desconfie de ofertas que prometem aprovação fácil sem análise ou que exigem pagamentos antecipados. A pressa pode levar a escolhas ruins.</p>
+        <p>Em resumo, a solicitação de crédito pessoal exige responsabilidade e atenção. Ao considerar taxas, parcelas, CET, sua capacidade de pagamento e comparando as opções, você estará apto a tomar uma decisão consciente e utilizar o crédito como uma ferramenta segura para seus objetivos financeiros.</p>
+      </div>
+
+      <h2 class="section-title">Perguntas frequentes</h2>
+
       <details class="faq-item" open>
-        <summary>É seguro solicitar crédito online?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <div class="faq-body">Sim. As plataformas parceiras utilizam criptografia de dados e seguem as normas do sistema financeiro nacional. Ainda assim, vale sempre conferir se a instituição é regulamentada antes de fornecer dados pessoais.</div>
+        <summary>É seguro solicitar crédito pessoal por canais digitais?</summary>
+        <div class="faq-answer">Sim, desde que a instituição seja regulamentada e o processo utilize criptografia de dados. Vale sempre confirmar se a plataforma é autorizada antes de compartilhar informações pessoais.</div>
       </details>
       <details class="faq-item">
-        <summary>Quanto tempo demora a aprovação?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <div class="faq-body">A análise inicial costuma sair em poucos minutos, mas o prazo final de aprovação e liberação pode variar de acordo com a instituição financeira responsável pela oferta.</div>
+        <summary>Quais documentos costumam ser pedidos?</summary>
+        <div class="faq-answer">Normalmente CPF, comprovante de renda e comprovante de endereço. A lista exata varia conforme a instituição e a modalidade de crédito.</div>
       </details>
       <details class="faq-item">
-        <summary>Ter o nome negativado impede a solicitação?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <div class="faq-body">Não necessariamente. Cada instituição tem seus próprios critérios de análise, e algumas linhas de crédito consideram outros fatores além da situação no cadastro de proteção.</div>
+        <summary>O score de crédito interfere na aprovação?</summary>
+        <div class="faq-answer">Sim, o score é um dos fatores levados em conta, mas não é o único. Cada instituição tem seus próprios critérios de análise de perfil.</div>
       </details>
       <details class="faq-item">
-        <summary>Existe algum custo para simular as opções?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <div class="faq-body">A simulação em si é gratuita. Custos como juros, tarifas ou seguros só existem se você efetivamente contratar uma oferta, e devem estar descritos claramente no contrato.</div>
+        <summary>O que é o CET (Custo Efetivo Total)?</summary>
+        <div class="faq-answer">É o indicador que reúne todos os custos de uma operação de crédito — juros, tarifas e encargos — em um único percentual, facilitando a comparação entre ofertas.</div>
       </details>
       <details class="faq-item">
-        <summary>Como sei que fui aprovado?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <div class="faq-body">A instituição parceira entra em contato diretamente (por e-mail, SMS ou dentro da própria plataforma) informando o resultado da análise e as condições finais oferecidas.</div>
+        <summary>Quanto tempo leva a análise?</summary>
+        <div class="faq-answer">A resposta inicial pode sair em poucos minutos, mas o prazo de liberação final depende da instituição financeira responsável pela oferta.</div>
       </details>
-    </div>
+      <details class="faq-item">
+        <summary>É possível simular sem compromisso?</summary>
+        <div class="faq-answer">Sim, a simulação é gratuita e não obriga o solicitante a contratar a oferta apresentada.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ter restrição no CPF impede a solicitação?</summary>
+        <div class="faq-answer">Não necessariamente. Algumas linhas de crédito consideram outros fatores além da situação cadastral, mas isso varia por instituição.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Como comparar diferentes ofertas de crédito?</summary>
+        <div class="faq-answer">O ideal é comparar o CET, o valor total das parcelas e o prazo de pagamento entre as propostas, e não apenas a taxa de juros isolada.</div>
+      </details>
 
-  </div>
-</main>
+      <div class="cta-block">
+        <h2 class="section-title" style="margin-top:0;">Consulte as opções disponíveis para o seu perfil</h2>
+        <p style="color:var(--text-soft); max-width:520px; margin:0 auto 24px;">Veja, sem compromisso, quais possibilidades de crédito pessoal podem estar disponíveis de acordo com o seu perfil.</p>
+        <a href="#" class="cta-btn">Verificar opções disponíveis</a>
+      </div>
+
+    </div>
+  </main>
+</div>
 
 <footer class="site">
-  <p>Este conteúdo tem caráter puramente informativo e não representa uma oferta direta de crédito. A aprovação e as condições finais estão estritamente sujeitas à análise interna das instituições financeiras parceiras e correspondentes bancários autorizados.</p>
-  <div class="links">
-    <a href="#">Política de Privacidade</a><span class="sep">|</span><a href="#">Termos de Uso</a>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>SOBRE</h4>
+        <p>Portal do Crédito é um portal especializado na produção de conteúdos informativos sobre crédito, educação financeira e soluções digitais relacionadas ao mercado financeiro brasileiro.</p>
+        <p>Nosso objetivo é ajudar os consumidores a compreender melhor como funcionam os produtos financeiros, os processos de análise de crédito e os principais fatores envolvidos antes da contratação de qualquer modalidade de crédito.</p>
+      </div>
+      <div>
+        <h4>TRANSPARÊNCIA</h4>
+        <p>Este conteúdo é patrocinado e possui finalidade exclusivamente informativa.</p>
+        <p>As informações apresentadas nesta página não representam garantia de aprovação de crédito, concessão de valores específicos ou oferta vinculante. A aprovação, os limites disponíveis, as taxas de juros, os prazos e demais condições dependem da análise realizada pela instituição financeira responsável, de acordo com seus critérios internos e legislação vigente.</p>
+      </div>
+      <div>
+        <h4>AVISO IMPORTANTE</h4>
+        <p>Antes de contratar qualquer operação financeira, leia atentamente todas as condições apresentadas pela instituição financeira, incluindo taxas de juros, Custo Efetivo Total (CET), prazos de pagamento, encargos e demais informações contratuais.</p>
+        <p>O crédito deve ser utilizado de forma consciente e compatível com sua capacidade de pagamento.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="margin-bottom:12px;">
+        <a href="#">Sobre</a> &nbsp;•&nbsp; <a href="#">Contato</a> &nbsp;•&nbsp; <a href="#">Política de Privacidade</a> &nbsp;•&nbsp; <a href="#">Termos de Uso</a> &nbsp;•&nbsp; <a href="#">Política de Cookies</a> &nbsp;•&nbsp; <a href="#">LGPD</a> &nbsp;•&nbsp; <a href="#">Mapa do Site</a>
+      </div>
+      © 2026 Portal do Crédito. Todos os direitos reservados.
+    </div>
   </div>
 </footer>
-
-<div class="sticky-cta" id="sticky-cta">
-  <span>Veja as opções de crédito disponíveis pra você</span>
-  <a href="#">Ver opções agora</a>
-</div>
-
-<script>
-  (function(){
-    var sticky = document.getElementById('sticky-cta');
-    var trigger = document.querySelector('.hero-img-wrap');
-    if(!sticky || !trigger) return;
-    window.addEventListener('scroll', function(){
-      var triggerBottom = trigger.getBoundingClientRect().bottom;
-      if(triggerBottom < 0){
-        sticky.classList.add('show');
-      } else {
-        sticky.classList.remove('show');
-      }
-    });
-  })();
-</script>
 
 </body>
 </html>
