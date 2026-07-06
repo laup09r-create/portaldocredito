@@ -9,12 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green: #1C9A5B;
-    --green-dark: #157a48;
-    --green-pale: #EAF7EF;
+    --dark: #0B3D2E;
+    --dark-2: #0F4D3A;
+    --green: #22C55E;
+    --green-bright: #3FE07A;
+    --green-dark: #16A34A;
+    --green-pale: #E7F8ED;
+    --gold: #F5B942;
     --ink: #16212B;
     --ink-soft: #4A5560;
-    --gray-bg: #F6F7F9;
+    --cream: #F7F5EF;
     --border: #E4E7EB;
     --white: #FFFFFF;
   }
@@ -31,7 +35,7 @@
 
   /* HEADER */
   header.site{
-    border-bottom:1px solid var(--border);
+    background:var(--dark);
     padding:18px 32px;
   }
   .header-inner{
@@ -39,52 +43,82 @@
     display:flex; align-items:center; justify-content:space-between;
     flex-wrap:wrap; gap:12px;
   }
-  .logo{ font-family:'Poppins', sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:.5px;}
-  .logo span{ color:var(--green); }
-  nav.main-nav{ display:flex; align-items:center; gap:28px; font-size:.88rem; font-weight:600; color:var(--ink); }
-  nav.main-nav .sep{ color:var(--border); }
-  .search-icon{ width:18px; height:18px; opacity:.7; }
+  .logo{ font-family:'Poppins', sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:.5px; color:var(--white); }
+  .logo span{ color:var(--green-bright); }
+  nav.main-nav{ display:flex; align-items:center; gap:28px; font-size:.88rem; font-weight:600; color:rgba(255,255,255,.85); }
+  nav.main-nav .sep{ color:rgba(255,255,255,.25); }
+  .search-icon{ width:18px; height:18px; opacity:.8; color:var(--white); }
 
   /* DISCLAIMER TOP */
   .top-disclaimer{
-    text-align:center; font-size:.82rem; color:var(--ink-soft);
-    padding:14px 20px; max-width:900px; margin:0 auto;
+    text-align:center; font-size:.8rem; color:var(--ink-soft);
+    padding:12px 20px; max-width:900px; margin:0 auto;
   }
 
-  /* ARTICLE HEADER */
-  .article-wrap{ max-width:1180px; margin:0 auto; padding:0 24px 60px; }
-  .eyebrow{
-    color:var(--green); font-weight:700; font-size:.82rem;
-    letter-spacing:.6px; margin-bottom:10px;
+  /* HERO BANNER (dark) */
+  .hero-banner{
+    background:linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+    padding:44px 24px 0;
+  }
+  .hero-banner-inner{ max-width:1180px; margin:0 auto; text-align:center; }
+  .eyebrow-pill{
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(63,224,122,.15); color:var(--green-bright);
+    font-weight:700; font-size:.78rem; letter-spacing:.6px;
+    padding:7px 16px; border-radius:999px; margin-bottom:18px;
   }
   h1.headline{
-    font-size:2.3rem; font-weight:700; line-height:1.18;
-    max-width:760px; margin-bottom:16px; color:var(--ink);
+    font-size:2.4rem; font-weight:700; line-height:1.2;
+    max-width:820px; margin:0 auto 16px; color:var(--white);
   }
-  .dek{ font-size:1.05rem; color:var(--ink-soft); max-width:640px; margin-bottom:22px; }
-  .byline{ display:flex; align-items:center; gap:12px; margin-bottom:28px; }
+  .dek{ font-size:1.05rem; color:rgba(255,255,255,.75); max-width:620px; margin:0 auto 22px; }
+  .byline{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:26px; }
   .byline .avatar{
-    width:44px; height:44px; border-radius:50%;
+    width:42px; height:42px; border-radius:50%;
     background:linear-gradient(135deg,#f2c9c0,#e8a898);
     display:flex; align-items:center; justify-content:center;
-    font-weight:700; color:#8a4a3a; font-size:1rem;
+    font-weight:700; color:#8a4a3a; font-size:.95rem;
   }
-  .byline .meta{ font-size:.85rem; color:var(--ink-soft); }
-  .byline .meta strong{ display:block; color:var(--ink); font-size:.92rem; font-weight:700; }
+  .byline .meta{ font-size:.84rem; color:rgba(255,255,255,.65); text-align:left; }
+  .byline .meta strong{ display:block; color:var(--white); font-size:.9rem; font-weight:700; }
 
-  /* HERO */
+  .trust-row{
+    display:flex; align-items:center; justify-content:center; gap:22px;
+    flex-wrap:wrap; padding:20px 0 34px; color:rgba(255,255,255,.8); font-size:.85rem;
+  }
+  .trust-row .item{ display:flex; align-items:center; gap:8px; }
+  .trust-row svg{ width:18px; height:18px; color:var(--green-bright); }
+  .stars{ color:var(--gold); letter-spacing:1px; }
+
+  .hero-img-wrap{ max-width:1180px; margin:0 auto; padding:0 24px 50px; }
   .hero{
-    border-radius:14px; overflow:hidden;
-    box-shadow:0 8px 24px rgba(20,30,40,.08);
-    line-height:0;
+    border-radius:16px; overflow:hidden;
+    box-shadow:0 16px 40px rgba(0,0,0,.28);
+    transform:translateY(28px);
+    display:grid; grid-template-columns:1.7fr 1fr;
   }
-  .hero-img{ width:100%; height:auto; display:block; }
+  .hero-img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-side{
+    background:var(--dark); color:var(--white);
+    padding:34px 30px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .hero-side h3{ font-size:1.3rem; font-weight:700; line-height:1.35; margin-bottom:4px; }
+  .hero-side h3 .accent{ color:var(--green-bright); display:block; }
+  .hero-list{ list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:14px; }
+  .hero-list li{ display:flex; align-items:flex-start; gap:10px; font-size:.92rem; }
+  .check{
+    flex:0 0 auto; width:20px; height:20px; border-radius:50%;
+    background:var(--green); display:flex; align-items:center; justify-content:center;
+    margin-top:1px;
+  }
+  .check svg{ width:11px; height:11px; }
 
-  /* BODY */
-  .body-copy{ max-width:760px; margin:44px auto 0; }
+  /* ARTICLE BODY */
+  .article-wrap{ max-width:1180px; margin:0 auto; padding:60px 24px 60px; }
+  .body-copy{ max-width:760px; margin:0 auto; }
   .body-copy p{ margin-bottom:18px; color:var(--ink); font-size:1rem; }
   .body-copy p.strong-line{ font-weight:700; }
-  h2.section-title{ font-size:1.5rem; font-weight:700; margin:36px 0 14px; }
+  h2.section-title{ font-size:1.55rem; font-weight:700; margin:36px 0 14px; color:var(--dark); }
 
   /* FEATURE CARDS */
   .feature-grid{
@@ -92,36 +126,35 @@
     margin:22px 0 44px;
   }
   .feature-card{
-    border:1px solid var(--border); border-radius:12px; padding:22px 18px;
-    background:var(--white);
+    border:1px solid var(--border); border-radius:14px; padding:22px 18px;
+    background:var(--cream);
   }
   .feature-icon{
-    width:40px; height:40px; border-radius:10px; background:var(--green-pale);
+    width:42px; height:42px; border-radius:999px; background:var(--green-pale);
     display:flex; align-items:center; justify-content:center; margin-bottom:14px;
   }
-  .feature-icon svg{ width:20px; height:20px; color:var(--green); }
+  .feature-icon svg{ width:20px; height:20px; color:var(--green-dark); }
   .feature-card h4{ font-size:.98rem; font-weight:700; margin-bottom:8px; line-height:1.3; }
   .feature-card p{ font-size:.87rem; color:var(--ink-soft); }
 
   /* WHO CAN APPLY */
   .who-row{
     display:flex; align-items:center; gap:0; margin:26px 0 34px;
-    border:1px solid var(--border); border-radius:12px; overflow:hidden;
+    border:1px solid var(--border); border-radius:14px; overflow:hidden;
+    background:var(--cream);
   }
-  .who-item{
-    flex:1; display:flex; align-items:center; gap:14px; padding:20px 24px;
-  }
-  .who-item .icon{ width:34px; height:34px; color:var(--green); flex:0 0 auto; }
+  .who-item{ flex:1; display:flex; align-items:center; gap:14px; padding:20px 24px; }
+  .who-item .icon{ width:34px; height:34px; color:var(--green-dark); flex:0 0 auto; }
   .who-item span{ font-size:.92rem; color:var(--ink); font-weight:500; }
   .who-divider{ width:1px; align-self:stretch; background:var(--border); }
 
   /* CALLOUT */
   .callout{
-    background:var(--green-pale); border:1px solid #cdeedb; border-radius:12px;
+    background:var(--green-pale); border:1px solid #cdeedb; border-radius:14px;
     padding:22px 24px; margin-bottom:36px; display:flex; gap:14px;
   }
   .callout .badge{
-    flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--green);
+    flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--green-dark);
     color:var(--white); display:flex; align-items:center; justify-content:center;
     font-weight:800; font-size:.95rem;
   }
@@ -132,37 +165,78 @@
   .cta-block{ text-align:center; margin:38px 0 30px; }
   .cta-btn{
     display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    background:var(--green); color:var(--white); font-weight:700; font-size:1.05rem;
-    padding:18px 30px; border-radius:10px; width:100%; max-width:700px;
-    box-shadow:0 6px 18px rgba(28,154,91,.28);
-    transition:background .15s ease, transform .15s ease;
+    background:linear-gradient(135deg, var(--green-bright), var(--green-dark));
+    color:var(--white); font-weight:700; font-size:1.05rem;
+    padding:18px 30px; border-radius:999px; width:100%; max-width:700px;
+    box-shadow:0 10px 26px rgba(34,197,94,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
   }
-  .cta-btn:hover{ background:var(--green-dark); transform:translateY(-1px); }
+  .cta-btn:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(34,197,94,.42); }
   .cta-btn svg{ width:20px; height:20px; }
   .cta-sub{
     margin-top:14px; font-size:.85rem; color:var(--ink-soft);
     display:flex; align-items:center; justify-content:center; gap:8px;
   }
-  .cta-sub svg{ width:16px; height:16px; color:var(--green); }
+  .cta-sub svg{ width:16px; height:16px; color:var(--green-dark); }
+
+  /* FAQ ACCORDION */
+  .faq{ margin-top:8px; }
+  .faq-item{
+    border:1px solid var(--border); border-radius:12px; margin-bottom:12px;
+    overflow:hidden; background:var(--white);
+  }
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:18px 20px;
+    font-weight:700; font-size:.96rem; display:flex; align-items:center;
+    justify-content:space-between; gap:12px; color:var(--dark);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary .chevron{
+    width:20px; height:20px; flex:0 0 auto; color:var(--green-dark);
+    transition:transform .2s ease;
+  }
+  .faq-item[open] summary .chevron{ transform:rotate(180deg); }
+  .faq-item .faq-body{
+    padding:0 20px 18px; font-size:.92rem; color:var(--ink-soft);
+  }
+
+  /* STICKY CTA */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    background:var(--dark); padding:12px 18px;
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.25);
+    transform:translateY(120%); transition:transform .3s ease;
+  }
+  .sticky-cta.show{ transform:translateY(0); }
+  .sticky-cta span{ color:var(--white); font-size:.88rem; font-weight:600; display:none; }
+  .sticky-cta a{
+    background:linear-gradient(135deg, var(--green-bright), var(--green-dark));
+    color:var(--white); font-weight:700; font-size:.92rem;
+    padding:13px 24px; border-radius:999px; white-space:nowrap;
+  }
 
   /* FOOTER */
   footer.site{
-    border-top:1px solid var(--border); margin-top:20px; padding:26px 24px 40px;
+    background:var(--dark); margin-top:20px; padding:30px 24px 90px;
     text-align:center;
   }
   footer.site p{
-    max-width:820px; margin:0 auto 14px; font-size:.8rem; color:var(--ink-soft);
+    max-width:820px; margin:0 auto 14px; font-size:.8rem; color:rgba(255,255,255,.55);
   }
   footer.site .links{ font-size:.85rem; font-weight:600; }
-  footer.site .links a{ color:var(--ink); }
-  footer.site .links .sep{ color:var(--border); margin:0 8px; }
+  footer.site .links a{ color:rgba(255,255,255,.85); }
+  footer.site .links .sep{ color:rgba(255,255,255,.25); margin:0 8px; }
 
   @media (max-width:860px){
+    .hero{ grid-template-columns:1fr; }
     .feature-grid{ grid-template-columns:repeat(2,1fr); }
     .who-row{ flex-direction:column; }
     .who-divider{ width:100%; height:1px; }
     h1.headline{ font-size:1.7rem; }
     nav.main-nav{ display:none; }
+    .trust-row{ gap:14px; font-size:.78rem; }
+    .sticky-cta span{ display:none; }
   }
 </style>
 </head>
@@ -183,28 +257,53 @@
 
 <p class="top-disclaimer">Este conteúdo é informativo. As condições podem variar de acordo com a análise de crédito de cada instituição financeira.</p>
 
-<main class="article-wrap">
+<section class="hero-banner">
+  <div class="hero-banner-inner">
+    <div class="eyebrow-pill">💳 CRÉDITO PESSOAL</div>
+    <h1 class="headline">Brasileiros estão descobrindo novas formas de acessar crédito online em poucos minutos</h1>
+    <p class="dek">Entenda como funciona o processo e veja como a digitalização de instituições tradicionais facilita o acesso para quem precisa de dinheiro rápido.</p>
 
-  <div class="eyebrow">CRÉDITO PESSOAL</div>
-  <h1 class="headline">Brasileiros estão descobrindo novas formas de acessar crédito online em poucos minutos</h1>
-  <p class="dek">Entenda como funciona o processo e veja como a digitalização de instituições tradicionais facilita o acesso para quem precisa de dinheiro rápido.</p>
+    <div class="byline">
+      <div class="avatar">JC</div>
+      <div class="meta">
+        <strong>Por Juliana Castro</strong>
+        Atualizado há 5 minutos &nbsp;•&nbsp; 4 min de leitura
+      </div>
+    </div>
 
-  <div class="byline">
-    <div class="avatar">JC</div>
-    <div class="meta">
-      <strong>Por Juliana Castro</strong>
-      Atualizado há 5 minutos &nbsp;•&nbsp; 4 min de leitura
+    <div class="trust-row">
+      <div class="item"><span class="stars">★★★★★</span>&nbsp; avaliado por leitores</div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
+        Conexão segura
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+        Resposta em minutos
+      </div>
     </div>
   </div>
+</section>
 
+<div class="hero-img-wrap">
   <section class="hero">
-    <img src="assets/hero-credito.png" alt="Mulher sorrindo usando celular no sofá — Crédito pessoal online e rápido, veja como funciona" class="hero-img">
+    <img src="assets/hero-credito.jpg" alt="Mulher sorrindo trabalhando com laptop e papéis na mesa" class="hero-img">
+    <div class="hero-side">
+      <h3>Crédito pessoal online e rápido:<span class="accent">veja como funciona</span></h3>
+      <ul class="hero-list">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Solicitação 100% online</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Análise em poucos minutos</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Dinheiro na conta após aprovação</li>
+      </ul>
+    </div>
   </section>
+</div>
 
+<main class="article-wrap">
   <div class="body-copy">
     <p>Nos últimos meses, cresceu no Brasil a busca por alternativas de crédito pessoal feitas totalmente pela internet. Segundo dados do mercado financeiro, cada vez mais pessoas estão optando por soluções digitais por conta da praticidade e rapidez na análise de perfil.</p>
 
-    <p>Com a modernização do sistema bancário, grandes instituições financeiras tradicionais - como o Banco Bradesco - passaram a integrar tecnologia de ponta para facilitar a vida do cidadão comum. Hoje, já é possível simular propostas e buscar aprovação sem enfrentar filas ou burocracias desnecessárias.</p>
+    <p>Com a modernização do sistema bancário, grandes instituições financeiras tradicionais passaram a integrar tecnologia de ponta para facilitar a vida do cidadão comum. Hoje, já é possível simular propostas e buscar aprovação sem enfrentar filas ou burocracias desnecessárias.</p>
 
     <p class="strong-line">Mas afinal, como isso funciona na prática?</p>
 
@@ -261,7 +360,7 @@
     <p>Atualmente, existem plataformas integradas que permitem consultar ofertas de crédito disponíveis para o seu perfil de forma simples e rápida.</p>
     <p>Basta preencher algumas informações básicas para visualizar as possibilidades reais e simular valores sem compromisso.</p>
 
-    <div class="cta-block">
+    <div class="cta-block" id="cta-principal">
       <a href="#" class="cta-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         VER OPÇÕES DE CRÉDITO DISPONÍVEIS AGORA
@@ -270,6 +369,40 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
         É rápido, seguro e não compromete seu score.
       </p>
+    </div>
+
+    <h2 class="section-title">Perguntas frequentes</h2>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>É seguro solicitar crédito online?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-body">Sim. As plataformas parceiras utilizam criptografia de dados e seguem as normas do sistema financeiro nacional. Ainda assim, vale sempre conferir se a instituição é regulamentada antes de fornecer dados pessoais.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo demora a aprovação?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-body">A análise inicial costuma sair em poucos minutos, mas o prazo final de aprovação e liberação pode variar de acordo com a instituição financeira responsável pela oferta.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ter o nome negativado impede a solicitação?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-body">Não necessariamente. Cada instituição tem seus próprios critérios de análise, e algumas linhas de crédito consideram outros fatores além da situação no cadastro de proteção.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Existe algum custo para simular as opções?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-body">A simulação em si é gratuita. Custos como juros, tarifas ou seguros só existem se você efetivamente contratar uma oferta, e devem estar descritos claramente no contrato.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Como sei que fui aprovado?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-body">A instituição parceira entra em contato diretamente (por e-mail, SMS ou dentro da própria plataforma) informando o resultado da análise e as condições finais oferecidas.</div>
+      </details>
     </div>
 
   </div>
@@ -281,6 +414,27 @@
     <a href="#">Política de Privacidade</a><span class="sep">|</span><a href="#">Termos de Uso</a>
   </div>
 </footer>
+
+<div class="sticky-cta" id="sticky-cta">
+  <span>Veja as opções de crédito disponíveis pra você</span>
+  <a href="#">Ver opções agora</a>
+</div>
+
+<script>
+  (function(){
+    var sticky = document.getElementById('sticky-cta');
+    var trigger = document.querySelector('.hero-img-wrap');
+    if(!sticky || !trigger) return;
+    window.addEventListener('scroll', function(){
+      var triggerBottom = trigger.getBoundingClientRect().bottom;
+      if(triggerBottom < 0){
+        sticky.classList.add('show');
+      } else {
+        sticky.classList.remove('show');
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
